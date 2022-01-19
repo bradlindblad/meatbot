@@ -69,11 +69,11 @@ jobs:
         with:
           python-version: '3.8'
       
-      -name: Install pipenv
-       run: pip install pipenv
+      - name: Install pipenv
+        run: pip install pipenv
 
-      -name: Install deps
-       run: pipenv install
+      - name: Install deps
+        run: pipenv install
 
       # - name: Install all necessary packages
       #   run: pip install bs4 telepot requests lxml
