@@ -57,4 +57,4 @@ if __name__ == "__main__":
     # Get the specials
     meats = getSpecials()
     
-    telegram_send.send(messages=[meats])
+    telegram_send.send(messages=[meats],conf = "getmeat.conf")
