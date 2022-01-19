@@ -58,7 +58,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install all necessary packages
-        run: pip install bs4 telegram-send requests lxml
+        run: pip install bs4 telepot requests lxml
 
         # Run the Python script
       - name: Run Python script
