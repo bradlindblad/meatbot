@@ -38,4 +38,5 @@ if __name__ == "__main__":
     
     # telegram_send.send(messages=[meats],conf = "getmeat.conf")
     # send_telegram_message(meats)
+    print(meats)
     

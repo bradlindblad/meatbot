@@ -22,16 +22,16 @@
 #         uses: actions/checkout@v2
 #       # - name: Install Chromium on ubuntu box
 #       #   run: sudo apt-get install -y chromium-browser
-#       - name: Set up Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: '3.9'
-#       - name: Install all necessary packages
-#         run: pip install bs4 telegram-send requests lxml
+      # - name: Set up Python
+      #   uses: actions/setup-python@v2
+      #   with:
+      #     python-version: '3.9'
+      # - name: Install all necessary packages
+      #   run: pip install bs4 telegram-send requests lxml
 
-#         # Run the Python script
-#       - name: Run Python script
-#         run: python3 main.py
+      #   # Run the Python script
+      # - name: Run Python script
+      #   run: python3 main.py
 
 #       #   # Commit .csv result to repo
 #       # - name: Add Data
@@ -52,6 +52,20 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install all necessary packages
+        run: pip install bs4 telegram-send requests lxml
+
+        # Run the Python script
+      - name: Run Python script
+        run: echo ::set-env name=SPECIALS::$(python3 main.py)
+            
+
+
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
         with:
@@ -61,4 +75,4 @@ jobs:
           token: 5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4
 
           message: |
-            whatup
+            ${{ env.SPECIALS }} 
