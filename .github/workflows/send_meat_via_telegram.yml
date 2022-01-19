@@ -68,10 +68,16 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
+      
+      -name: Install pipenv
+       run: pip install pipenv
 
-      - name: Install all necessary packages
-        run: pip install bs4 telepot requests lxml
+      -name: Install deps
+       run: pipenv install
+
+      # - name: Install all necessary packages
+      #   run: pip install bs4 telepot requests lxml
 
         # Run the Python script
       - name: Run Python script
-        run: python main.py
+        run: pipenv run python main.py
