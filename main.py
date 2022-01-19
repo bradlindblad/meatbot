@@ -6,7 +6,7 @@ import telepot
 chat_id = 509047904
 api_key = "5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4"
 
-def getSpecials(msg):
+def getSpecials():
     URL = "http://www.meatsbyjohnandwayne.com/weeklyspecials.html"
 
     response = requests.get(URL)
@@ -22,7 +22,7 @@ def getSpecials(msg):
 
     return answer
 
-def send_telegram_message():
+def send_telegram_message(msg):
     
     bot = telepot.Bot(api_key)
     bot.getMe()
