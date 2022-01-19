@@ -63,7 +63,8 @@ jobs:
         # Run the Python script
       - name: Run Python script
         run: |
-          SPECIALS=$(python3 main.py) >> $GITHUB_ENV
+          echo "::set-output name=SPECIALS::$(python3 main.py)"
+        id: output
             
 
 
@@ -76,4 +77,4 @@ jobs:
           token: 5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4
 
           message: |
-            echo "${{ env.SPECIALS }}"
+            ${{ steps.output.outputs.SPECIALS }}
