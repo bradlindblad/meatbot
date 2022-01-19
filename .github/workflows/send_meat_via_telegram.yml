@@ -62,9 +62,9 @@ jobs:
 
         # Run the Python script
       - name: Run Python script
+        id: vars
         run: |
-          echo "::set-output name=SPECIALS::$(python3 main.py)"
-        id: output
+          echo "::set-output name=go_version::$(python3 main.py)
             
 
 
@@ -77,4 +77,4 @@ jobs:
           token: 5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4
 
           message: |
-            ${{ steps.output.outputs.SPECIALS }}
+            ${{ steps.vars.outputs.go_version }}
