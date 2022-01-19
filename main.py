@@ -1,10 +1,10 @@
 from bs4 import BeautifulSoup as bs
 import requests
+import sys
 import telepot
 
-chat_id = 509047904
-api_key = "5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4"
 
+api_key = sys.argv[1]
 
 def getSpecials():
     URL = "http://www.meatsbyjohnandwayne.com/weeklyspecials.html"

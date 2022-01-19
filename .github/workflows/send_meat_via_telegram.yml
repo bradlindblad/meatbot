@@ -35,4 +35,4 @@ jobs:
 
         # Run the Python script
       - name: Run Python script
-        run: pipenv run python main.py
+        run: pipenv run python main.py ${{ secrets.API_KEY }}
