@@ -5,9 +5,10 @@ name: meat_telegram
 on:
   # Action can be manually started
   workflow_dispatch:
-  # job runs on Thursday mornings at 5:30 AM
+  # job runs on Mon and Tues mornings 
   schedule:
-    - cron: '0 0 8 ? * MON,TUE *'
+    - cron: '0 15 * * 1'
+    - cron: '0 13 * * 2'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
