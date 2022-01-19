@@ -62,7 +62,8 @@ jobs:
 
         # Run the Python script
       - name: Run Python script
-        run: "SPECIALS=$(python3 main.py)" >> $GITHUB_ENV
+        run: |
+          echo "SPECIALS=$(python3 main.py)" >> $GITHUB_ENV
             
 
 
