@@ -57,8 +57,8 @@ jobs:
         with:
           # to: ${{ secrets.TELEGRAM_TO }}
           # token: ${{ secrets.TELEGRAM_TOKEN }}
-          to: 509047904
-          token: 5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4
+          to: "509047904"
+          token: "5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4"
 
           message: |
             whatup
