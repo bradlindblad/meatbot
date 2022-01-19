@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install all necessary packages
-        run: pip install bs4 requests
+        run: pip install bs4 telegram-send
 
         # Run the Python script
       - name: Run Python script
