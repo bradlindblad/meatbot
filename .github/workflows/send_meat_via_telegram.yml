@@ -64,7 +64,7 @@ jobs:
       - name: Run Python script
         id: vars
         run: |
-          echo "::set-output name=go_version::$(python3 main.py)
+          echo "::set-output name=go_version::$(python3 main.py)"
             
 
 
