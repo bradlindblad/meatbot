@@ -62,7 +62,7 @@ jobs:
 
         # Run the Python script
       - name: Run Python script
-        run: echo ::set-env name=SPECIALS::$(python3 main.py)
+        run: "SPECIALS=$(python3 main.py)" >> $GITHUB_ENV
             
 
 
@@ -75,4 +75,4 @@ jobs:
           token: 5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4
 
           message: |
-            ${{ env.SPECIALS }} 
+            echo "${{ env.SPECIALS }}"
