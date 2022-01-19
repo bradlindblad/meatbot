@@ -62,19 +62,4 @@ jobs:
 
         # Run the Python script
       - name: Run Python script
-        id: vars
-        run: |
-          echo "::set-output name=go_version::$(python3 main.py)"
-            
-
-
-      - name: send telegram message on push
-        uses: appleboy/telegram-action@master
-        with:
-          # to: ${{ secrets.TELEGRAM_TO }}
-          # token: ${{ secrets.TELEGRAM_TOKEN }}
-          to: 1690960383
-          token: 5090479049:AAFKlZFwLsIkttkgMvTgtU0OGTFEwChXPD4
-
-          message: |
-            ${{ steps.vars.outputs.go_version }}
+        run: python3 main.py
