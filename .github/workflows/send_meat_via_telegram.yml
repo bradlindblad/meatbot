@@ -43,9 +43,18 @@
 #       #     git commit -m "Latest data: ${timestamp}" || exit 0
 #       #     git push
 
+# This workflow is for scraping data from the OCC website on a weekly basis
+name: meat_telegram
 
-name: telegram message
-on: [push]
+# Controls when the action will run.
+on:
+  # Action can be manually started
+  workflow_dispatch:
+  # job runs on Mon and Tues mornings 
+  schedule:
+    - cron: '0 15 * * 1'
+    - cron: '0 13 * * 2'
+
 jobs:
 
   build:
