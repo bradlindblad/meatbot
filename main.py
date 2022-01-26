@@ -1,10 +1,12 @@
 from bs4 import BeautifulSoup as bs
+from decouple import config
 import requests
 import sys
 import telepot
 
 
-api_key = sys.argv[1]
+# api_key = sys.argv[1]
+api_key = config("API_KEY")
 
 def getSpecials():
     URL = "http://www.meatsbyjohnandwayne.com/weeklyspecials.html"

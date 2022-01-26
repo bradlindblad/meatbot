@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 requests = "*"
 bs4 = "*"
-telegram-send = "*"
 telepot = "*"
 lxml = "*"
+decouple = "*"
 
 [dev-packages]
 

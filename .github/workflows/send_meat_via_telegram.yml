@@ -30,9 +30,8 @@ jobs:
       - name: Install deps
         run: pipenv install
 
-      # - name: Install all necessary packages
-      #   run: pip install bs4 telepot requests lxml
-
         # Run the Python script
       - name: Run Python script
-        run: pipenv run python main.py ${{ secrets.API_KEY }}
+        run: pipenv run python main.py
+        env: 
+          API_KEY: ${{ secrets.API_KEY }}
