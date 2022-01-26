@@ -5,8 +5,8 @@ import sys
 import telepot
 
 
-# api_key = sys.argv[1]
-api_key = config("API_KEY")
+MY_ID = config("MY_ID")
+API_KEY = config("API_KEY")
 
 def getSpecials():
     URL = "http://www.meatsbyjohnandwayne.com/weeklyspecials.html"
@@ -31,9 +31,9 @@ def getSpecials():
 
 def send_telegram_message(msg):
 
-    bot = telepot.Bot(api_key)
+    bot = telepot.Bot(API_KEY)
     bot.getMe()
-    bot.sendMessage(1690960383, msg)
+    bot.sendMessage(MY_ID, msg)
 
 
 if __name__ == "__main__":
