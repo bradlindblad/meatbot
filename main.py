@@ -16,17 +16,13 @@ def getSpecials():
     html = response.content
     soup = bs(html, "lxml")
 
-    answer = (
-        soup.find("td")
-        .text.replace("\n", "")
-        .replace("\xa0", "")
-        .replace(
-            "(function(d, s, id) {\r  var js, fjs = d.getElementsByTagName(s)[0];\r  if (d.getElementById(id)) return;\r  js = d.createElement(s); js.id = id;\r  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5\";\r  fjs.parentNode.insertBefore(js, fjs);\r}(document, 'script', 'facebook-jssdk'));",
-            "",
-        )
-    )
+    specials = soup.select('.specials-wrap div')
+    clean_specials = [i.text for i in specials]
+    cleaner_specials = [i.replace("  ", '') for i in clean_specials]
+    cleanest_specials = [i.replace("\n", ' ').strip() for i in cleaner_specials]
 
-    return answer
+    
+    return cleanest_specials
 
 
 def send_telegram_message(msg):
